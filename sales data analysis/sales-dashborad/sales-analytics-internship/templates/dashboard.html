@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Analytics | Internship Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <h1>Sales Performance Dashboard</h1>
+            <div class="last-updated" id="updateTime"></div>
+        </header>
+
+        <section class="kpi-section">
+            <div class="kpi-card">
+                <div class="kpi-value" id="totalRevenue">$---</div>
+                <div class="kpi-label">Total Revenue</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" id="avgOrderValue">$---</div>
+                <div class="kpi-label">Avg Order Value</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" id="conversionRate">---%</div>
+                <div class="kpi-label">Conversion Rate</div>
+            </div>
+        </section>
+
+        <section class="visualization-section">
+            <div class="chart-container">
+                <h2>Product Performance</h2>
+                <img src="{{ url_for('static', filename='images/product_revenue.png') }}" 
+                     alt="Revenue by Product" class="chart-image">
+            </div>
+            <div class="chart-container">
+                <h2>Sales Trend</h2>
+                <img src="{{ url_for('static', filename='images/monthly_trend.png') }}" 
+                     alt="Monthly Trend" class="chart-image">
+            </div>
+        </section>
+
+        <section class="recommendations">
+            <h2>Actionable Insights</h2>
+            <ul id="recommendationsList">
+                <!-- Filled by JavaScript -->
+            </ul>
+        </section>
+
+        <footer class="dashboard-footer">
+            <p>Internship Project Submission • Generated on <span id="generationDate"></span></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
